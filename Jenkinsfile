@@ -1,4 +1,4 @@
-def myGv
+myGv
 pipeline{
   agent any 
   tools{
