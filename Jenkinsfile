@@ -1,4 +1,4 @@
-myGv
+def gv
 pipeline{
   agent any 
   tools{
@@ -8,21 +8,21 @@ pipeline{
     stage('init'){
       steps{
         script{
-          myGv = load "myscript.groovy"
+          gv = load "myscript.groovy"
         }
       }
     }
     stage('build jar'){
       steps{
         script{
-          myGv.buildJar()  
+          gv.buildJar()  
         }
       }
     }
     stage('build image'){
       steps{
         script{
-          myGV.buildImage()
+          gv.buildImage()
           }
         }
       }
