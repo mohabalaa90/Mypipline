@@ -8,7 +8,7 @@ def buildImage(){
  sh "docker build -t mohab98/mohab:MyPl$BUILD_NUMBER ."
  sh "echo $PASS | docker login -u $USER --password-stdin"
  // sh "docker push mohab98/mohab:MyPl$BUILD_NUMBER"
+ }
 }
- 
 return this
   
