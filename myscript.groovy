@@ -6,8 +6,7 @@ def buildJar(){
 
 def clearOldImages(){
   echo "clearing Old Images ..............."
-  sh "docker images -a | grep mohab98/mohab* | awk '{print $3}' | xargs docker rmi -f "
-}
+  docker images -a | grep mohab98/mohab* | awk '{print $3}' | xargs docker rmi -f 
 
 def buildImage(){
   echo "building image..............."
