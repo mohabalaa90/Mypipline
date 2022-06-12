@@ -45,7 +45,7 @@ def commitVersionUpdate(){
     sh "git remote set-url origin https://${USER}:${PASS}@github.com/mohabalaa90/Mypipline.git"
     sh 'git add .'
     sh 'git commit -m "update "'
-    sh 'git push'
+    sh 'git push origin HEAD:master'
   }
 }
 
