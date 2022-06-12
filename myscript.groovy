@@ -39,10 +39,11 @@ def commitVersionUpdate(){
     sh 'git config --global user.name "JenkinsServer"'
     sh "git remote set-url origin https://${USER}:${PASS}@https://github.com/mohabalaa90/Mypipline.git"
     sh 'git add .'
+    sh 'git reset HEAD pom.xml'
     sh 'git status'
     sh 'git commit -m "update pom file "'
     sh 'git status'
-    sh 'git push -u origin main'
+    sh 'git push origin HEAD:master'
   }
 }
 
