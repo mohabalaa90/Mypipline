@@ -42,8 +42,8 @@ def commitVersionUpdate(){
     sh 'git reset HEAD pom.xml'
     sh 'git status'
     sh 'git add .'
-    sh 'git commit -a '
-    //sh 'git commit -m "update pom file "'
+    //sh 'git commit -a '
+    sh 'git commit -m "update pom file "'
     sh 'git status'
     sh 'git push origin HEAD:master'
   }
