@@ -1,3 +1,5 @@
+
+
 def buildJar(){
   echo "building jar file............... "
   sh 'mvn clean'
@@ -15,12 +17,12 @@ def clearOldImages(){
     fi'''
 }
 
-def buildImage(){
+def buildImage(String imageName){
   echo "building image..............."
   withCredentials([usernamePassword(credentialsId:'dockerHub-Credentials' , passwordVariable:'PASS' , usernameVariable:'USER')]){
-    sh "docker build -t mohab98/mohab:MyPl$BUILD_NUMBER ."
+    sh "docker build -t mohab98/mohab:$imageName$BUILD_NUMBER ."
     sh "echo $PASS | docker login -u $USER --password-stdin"
-    //sh "docker push mohab98/mohab:MyPl$BUILD_NUMBER"
+    //sh "docker push mohab98/mohab:imageName$BUILD_NUMBER"
   }
 }
 return this
