@@ -12,6 +12,13 @@ pipeline{
         }
       }
     }
+    stage('increment Version'){
+      steps{
+        script{
+          gv.incrementVeresion()
+        }
+      }
+    }    
     stage('build jar'){
       steps{
         script{
@@ -29,7 +36,7 @@ pipeline{
     stage('build image'){
       steps{
         script{
-          gv.buildImage "testparam"
+          gv.buildImage 'myImage'
           }
         }
       }
