@@ -31,5 +31,18 @@ def buildImage(String imgN){
     //sh "docker push mohab98/mohab:$imgN${IMAGE_NAME}"
   }
 }
+
+def commitVersionUpdate(){
+  echo "commit the new pom file...."
+  withCredentials([usernamePassword(credentialsId:'git-Credentials' , passwordVariable:'PASS' , usernameVariable:'USER')]){
+    sh 'git config --global user.email "jenkinsServer@local.com"'
+    sh 'git config --global user.name "JenkinsServer"'
+    sh "git remote set-url origin https://${USER}:${PASS}@https://github.com/mohabalaa90/Mypipline.git"
+    sh 'git add .'
+    sh 'git commit -m "update pom file "'
+    sh 'git push origin HEAD:master'
+  }
+}
+
 return this
   
