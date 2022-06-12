@@ -40,5 +40,12 @@ pipeline{
           }
         }
       }
+    stage('build image'){
+      steps{
+        script{
+          gv.commitVersionUpdate()
+          }
+        }
+      }    
     } 
   }
