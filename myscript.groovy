@@ -14,7 +14,6 @@ def buildJar(){
 
 def clearOldImages(){
   echo "clearing Old Images ..............."
-  //sh 'docker images -a  | grep "mohab98/mohab*" | awk \'{print $3}\' | xargs docker rmi -f '
   sh '''if docker images -a  | grep "mohab98/mohab*" | awk \'{print $3}\' | xargs docker rmi -f ;
   then 
     printf "clearing succsseded"
