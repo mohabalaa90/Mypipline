@@ -35,14 +35,14 @@ def commitVersionUpdate(){
   echo "commit the new pom file...."
   withCredentials([usernamePassword(credentialsId:'git-Credentials' , passwordVariable:'PASS' , usernameVariable:'USER')]){
     
-	sh 'git config --global user.email "jenkinsServer@local.com"'
+    sh 'git config --global user.email "jenkinsServer@local.com"'
     sh 'git config --global user.name "JenkinsServer"'
     
-	sh 'git status'
-	sh 'git branch'
-	sh 'git config --list'
+    sh 'git status'
+    sh 'git branch'
+    sh 'git config --list'
 	
-	sh "git remote set-url origin https://${USER}:${PASS}@https://github.com/mohabalaa90/Mypipline.git"
+    sh "git remote set-url origin https://${USER}:${PASS}@https://github.com/mohabalaa90/Mypipline.git"
     sh 'git add .'
     sh 'git commit -m "update "'
     sh 'git push origin HEAD:master'
