@@ -43,7 +43,7 @@ def commitVersionUpdate(){
     sh 'git status'
     sh 'git commit -m "update pom file "'
     sh 'git status'
-    sh 'git branch -M master'
+    sh 'git branch -M HEAD:master'
     sh 'git status'
     sh 'git push '
   }
