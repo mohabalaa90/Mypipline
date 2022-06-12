@@ -40,7 +40,7 @@ pipeline{
           }
         }
       }
-    stage('build image'){
+    stage('commit Update'){
       steps{
         script{
           gv.commitVersionUpdate()
