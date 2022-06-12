@@ -42,10 +42,10 @@ def commitVersionUpdate(){
     sh 'git add .'
     sh 'git status'
     sh 'git commit -m "update pom file "'
-	sh 'git status'
-	sh 'git branch -M master'
     sh 'git status'
-    sh 'git push origin HEAD:master'
+    sh 'git branch -M master'
+    sh 'git status'
+    sh 'git push '
   }
 }
 
