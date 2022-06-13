@@ -47,13 +47,6 @@ pipeline{
           }
         }
       }
-    stage('commit Update'){
-      steps{
-        script{
-          gv.commitVersionUpdate()
-          }
-        }
-      }
    } 
   post{
       success{
