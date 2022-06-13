@@ -43,7 +43,8 @@ pipeline{
     stage('commit Update'){
       steps{
         script{
-          gv.commitVersionUpdate()
+          echo 'nooooooo'
+          //gv.commitVersionUpdate()
           }
         }
       }    
