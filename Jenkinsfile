@@ -20,13 +20,13 @@ pipeline{
       }
     }    
     stage('build jar'){
-      input{
+     /* input{
             message "approve to execute or not "
             ok "yes"
             parameters{
               booleanParam(name:'execute', defaultValue:true , description:'wait for approval')
              }
-            }
+            }*/
       steps{
         script{
           gv.buildJar()  
@@ -57,7 +57,9 @@ pipeline{
    } 
   post{
       success{
-        echo "all success%%%%%%%%%%%%%%%%%%%%%%%"
+        script{
+          gv.commitVersionUpdate()
+          }
       }
     }
 }
