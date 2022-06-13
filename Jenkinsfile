@@ -24,12 +24,12 @@ pipeline{
     }    
     stage('build jar'){
       steps{
-        script{
-          when{
+        when{
             expression{
               params.execute == true
             }
           }
+        script{
           gv.buildJar()  
         }
       }
@@ -58,9 +58,7 @@ pipeline{
    } 
   post{
       success{
-        script{
-          echo "all success%%%%%%%%%%%%%%%%%%%%%%%%%%%"
-        }
+        echo "all success%%%%%%%%%%%%%%%%%%%%%%%"
       }
     }
 }
