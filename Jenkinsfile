@@ -5,7 +5,7 @@ pipeline{
     maven 'maven-3.8.5'
   }
   parameters{
-    booleanParam(name:'execute', defaultvalue:true , description:'wait for approval')
+    booleanParam(name:'execute', defaultValue:true , description:'wait for approval')
   }
   stages{
     stage('init'){
