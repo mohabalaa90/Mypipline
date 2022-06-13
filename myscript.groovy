@@ -34,7 +34,7 @@ def buildImage(String imgN){
 def commitVersionUpdate(){
   echo "commit the new pom file...."
   withCredentials([usernamePassword(credentialsId:'git-Credentials' , passwordVariable:'PASS' , usernameVariable:'USER')]){
-    
+    sh 'git init '    
     sh 'git config --global user.email "jenkinsServer@local.com"'
     sh 'git config --global user.name "JenkinsServer"'
     
