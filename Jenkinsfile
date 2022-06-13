@@ -4,9 +4,6 @@ pipeline{
   tools{
     maven 'maven-3.8.5'
   }
-  parameters{
-    booleanParam(name:'execute', defaultValue:true , description:'wait for approval')
-  }
   stages{
     stage('init'){
       steps{
@@ -26,7 +23,9 @@ pipeline{
       input{
             message "approve to execute or not "
             ok "yes"
-            params.execute == true
+            parameters{
+              booleanParam(name:'execute', defaultValue:true , description:'wait for approval')
+             }
             }
       steps{
         script{
