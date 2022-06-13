@@ -48,7 +48,7 @@ def commitVersionUpdate(){
     sh 'git status'	  
     sh 'git commit -m "update "'
     sh 'git status'	  
-    sh "git push -u origin HEAD:master"
+    sh "git push origin HEAD:master"
   }
 }
 
