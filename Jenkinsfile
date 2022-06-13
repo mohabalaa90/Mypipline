@@ -19,7 +19,7 @@ pipeline{
         }
       }
     }    
-    /*stage('build jar'){
+    stage('build jar'){
       input{
             message "approve to execute or not "
             ok "yes"
@@ -32,8 +32,8 @@ pipeline{
           gv.buildJar()  
         }
       }
-    }*/
-    /*stage('clear images'){
+    }
+    stage('clear images'){
       steps{
         script{
           gv.clearOldImages()  
@@ -46,14 +46,14 @@ pipeline{
           gv.buildImage 'myImage'
           }
         }
-      }*/
-    /*stage('commit Update'){
+      }
+    stage('commit Update'){
       steps{
         script{
           gv.commitVersionUpdate()
           }
         }
-      }*/
+      }
    } 
   post{
       success{
