@@ -23,13 +23,12 @@ pipeline{
       }
     }    
     stage('build jar'){
-      steps{
-        input{
+      input{
             message "approve to execute or not "
             ok "yes"
             params.execute == true
             }
-          }
+      steps{
         script{
           gv.buildJar()  
         }
