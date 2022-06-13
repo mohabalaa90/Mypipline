@@ -24,9 +24,10 @@ pipeline{
     }    
     stage('build jar'){
       steps{
-        when{
-            expression{
-              params.execute == true
+        input{
+            message "approve to execute or not "
+            ok "yes"
+            params.execute == true
             }
           }
         script{
