@@ -19,21 +19,21 @@ pipeline{
         }
       }
     }    
-    stage('build jar'){
-     /* input{
+    /*stage('build jar'){
+      input{
             message "approve to execute or not "
             ok "yes"
             parameters{
               booleanParam(name:'execute', defaultValue:true , description:'wait for approval')
              }
-            }*/
+            }
       steps{
         script{
           gv.buildJar()  
         }
       }
-    }
-    stage('clear images'){
+    }*/
+    /*stage('clear images'){
       steps{
         script{
           gv.clearOldImages()  
@@ -46,7 +46,7 @@ pipeline{
           gv.buildImage 'myImage'
           }
         }
-      }
+      }*/
     /*stage('commit Update'){
       steps{
         script{
