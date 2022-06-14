@@ -14,7 +14,7 @@ def buildJar(){
 
 def clearOldImages(){
   echo "clearing Old Images ..............."
-  sh '''if docker images -a  | grep "mohab98/mohab*" | awk \'{print $3}\' | xargs docker rmi -f ;
+  sh '''if docker images -a  | grep "STS*" | awk \'{print $3}\' | xargs docker rmi -f ;
   then 
     printf "clearing succsseded"
   else 
@@ -27,7 +27,7 @@ def buildImage(String imgN){
   withCredentials([usernamePassword(credentialsId:'dockerHub-Credentials' , passwordVariable:'PASS' , usernameVariable:'USER')]){
     sh "docker build -t mohab98/mohab:$imgN${IMAGE_NAME} ."
     sh "echo $PASS | docker login -u $USER --password-stdin"
-    //sh "docker push mohab98/mohab:$imgN${IMAGE_NAME}"
+    sh "docker push mohab98/mohab:$imgN${IMAGE_NAME}"
 	  
   }
 }
