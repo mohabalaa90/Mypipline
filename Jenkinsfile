@@ -23,9 +23,6 @@ pipeline{
       input{
             message "approve to execute or not "
             ok "yes"
-            parameters{
-              booleanParam(name:'execute', defaultValue:true , description:'wait for approval')
-             }
             }
       steps{
         script{
@@ -33,17 +30,17 @@ pipeline{
         }
       }
     }
-    stage('clear images'){
+   /* stage('clear images'){
       steps{
         script{
           gv.clearOldImages()  
         }
       }
-    }
+    }*/
     stage('build image'){
       steps{
         script{
-          gv.buildImage 'myImage'
+          gv.buildImage 'STS'
           }
         }
       }
