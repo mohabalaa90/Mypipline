@@ -28,6 +28,7 @@ def buildImage(String imgN){
     sh "docker build -t mohab98/mohab:$imgN${IMAGE_NAME} ."
     sh "echo $PASS | docker login -u $USER --password-stdin"
     //sh "docker push mohab98/mohab:$imgN${IMAGE_NAME}"
+	  
   }
 }
 
