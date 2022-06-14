@@ -27,7 +27,7 @@ def buildImage(String imgN){
   withCredentials([usernamePassword(credentialsId:'dockerHub-Credentials' , passwordVariable:'PASS' , usernameVariable:'USER')]){
     sh "docker build -t mohab98/mohab:$imgN${IMAGE_NAME} ."
     sh "echo $PASS | docker login -u $USER --password-stdin"
-    //sh "docker push mohab98/mohab:$imgN${IMAGE_NAME}"
+    sh "docker push mohab98/mohab:$imgN${IMAGE_NAME}"
   }
 }
 
