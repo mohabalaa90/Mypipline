@@ -30,13 +30,13 @@ pipeline{
         }
       }
     }
-    stage('clear images'){
+    /*stage('clear images'){
       steps{
         script{
           gv.clearOldImages()  
         }
       }
-    }
+    }*/
     stage('build image'){
       steps{
         script{
