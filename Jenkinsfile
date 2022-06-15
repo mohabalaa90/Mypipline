@@ -41,6 +41,7 @@ pipeline{
       steps{
         script{
           gv.buildImage 'STS'
+          
           }
         }
       }
