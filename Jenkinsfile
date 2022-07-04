@@ -55,7 +55,7 @@ pipeline{
   stage('build container'){
     steps{
       script{
-        gv.buildContainer()
+        gv.buildContainer 'STS'
       }
     }
   }
