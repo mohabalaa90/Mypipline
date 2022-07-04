@@ -45,7 +45,6 @@ pipeline{
           }
         }
       }
-   } 
   stage('stop container'){
     steps{
       script{
@@ -60,6 +59,7 @@ pipeline{
       }
     }
   }
+}
   post{
       success{
         script{
