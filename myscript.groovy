@@ -22,6 +22,17 @@ def clearOldImages(){
     fi'''
 }
 
+def stopOldContainers(){
+  echo "clearing Old Containers ..............."
+  sh '''if docker ps -a | grep "app*" | awk '{print $1}' | xargs docker stop -f ;
+  then 
+    printf "stopping succsseded"
+  else 
+    printf "no containers to stop"
+    fi'''
+}
+
+
 def buildImage(String imgN){
   echo "building image..............."
   withCredentials([usernamePassword(credentialsId:'dockerHub-Credentials' , passwordVariable:'PASS' , usernameVariable:'USER')]){
@@ -29,6 +40,12 @@ def buildImage(String imgN){
     sh "echo $PASS | docker login -u $USER --password-stdin"
     //sh "docker push mohab98/mohab:$imgN${IMAGE_NAME}" 	  
   }
+}
+
+
+def  buildContainer(){
+  echo "building container.............."
+  docker run -d -ti --name app${BUILD_NUMBER}  mohab98/mohab:app${IMAGE_NAME}
 }
 
 def commitVersionUpdate(){
