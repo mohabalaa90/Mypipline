@@ -24,7 +24,7 @@ def clearOldImages(){
 
 def stopOldContainers(){
   echo "clearing Old Containers ..............."
-  sh '''if docker ps -a | grep "app*" | awk '{print $1}' | xargs docker stop -f ;
+  sh '''if docker ps -a | grep "app*" | awk '{print $1}' | xargs docker stop  ;
   then 
     printf "stopping succsseded"
   else 
