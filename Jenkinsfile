@@ -46,6 +46,20 @@ pipeline{
         }
       }
    } 
+  stage('stop container'){
+    steps{
+      script{
+        gv.stopOldContainers()
+      }
+    }
+  }
+  stage('build container'){
+    steps{
+      script{
+        gv.buildContainer()
+      }
+    }
+  }
   post{
       success{
         script{
