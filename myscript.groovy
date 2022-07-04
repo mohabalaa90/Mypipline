@@ -43,9 +43,9 @@ def buildImage(String imgN){
 }
 
 
-def  buildContainer(){
+def  buildContainer(String imgN){
   echo "building container.............."
-  sh "docker run -d -ti --name app${BUILD_NUMBER}  mohab98/mohab:app${IMAGE_NAME}"
+  sh "docker run -d -ti --name app${BUILD_NUMBER}  mohab98/mohab:$imgN${IMAGE_NAME}"
 }
 
 def commitVersionUpdate(){
